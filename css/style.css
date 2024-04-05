@@ -1,0 +1,108 @@
+:root {
+  --black: #000;
+  --white: hsl(0, 0%, 100%);
+  --gray-1: hsl(0, 0%, 17%);
+  --gray-2: hsl(0, 0%, 59%);
+  --ff-primary: "Rubik", sans-serif;
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .app-main .info-table-info-box h2 {
+    font-size: 3rem;
+    color: var(--gray-2);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .app-main .info-table-info-box p {
+    font-size: 3rem;
+    font-weight: 500;
+  }
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: var(--ff-primary);
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  max-width: 767px;
+  text-align: center;
+  margin: 0 auto;
+}
+.app-main {
+  background-image: url("../images/pattern-bg-mobile.png");
+  background-size: cover;
+  height: 300px;
+  padding: 1.5rem;
+  z-index: 5;
+}
+.app-main h1 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--white);
+  margin-bottom: 2rem;
+}
+.app-main .input-box {
+  position: relative;
+}
+.app-main .input-box-input, .app-main .input-box-search {
+  border: none;
+}
+.app-main .input-box-input {
+  padding: 18px 25px;
+  width: 100%;
+  border: none;
+  border-radius: 12px;
+  color: var(--gray-1);
+  font-size: 1.15rem;
+  font-weight: 400;
+}
+.app-main .input-box-input:focus {
+  outline: none;
+}
+.app-main .input-box-search {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 65px;
+  height: 100%;
+  background-color: var(--black);
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.app-main .input-box-search:hover {
+  background-color: var(--gray-1);
+}
+.app-main .info-table {
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  background-color: var(--white);
+  border-radius: 12px;
+}
+.app-main .info-table-info-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.app-main .info-table-info-box h2 {
+  font-size: 0.6rem;
+  color: var(--gray-2);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.app-main .info-table-info-box p {
+  font-size: 1.15rem;
+  font-weight: 500;
+}
+.app-main .info-table-info-box:not(:last-child) {
+  margin-bottom: 1.5rem;
+}
+.app .map {
+  background-color: #888;
+  min-height: 60vh;
+}/*# sourceMappingURL=style.css.map */

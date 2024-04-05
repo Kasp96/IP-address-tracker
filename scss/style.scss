@@ -1,0 +1,97 @@
+@use 'variables' as *;
+@use 'media' as *;
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: var(--ff-primary);
+}
+
+.app {
+	display: flex;
+	flex-direction: column;
+	max-width: 767px;
+	text-align: center;
+	margin: 0 auto;
+
+	&-main {
+		background-image: url('../images/pattern-bg-mobile.png');
+		background-size: cover;
+		height: 300px;
+		padding: 1.5rem;
+		z-index: 5;
+
+		h1 {
+			font-size: 1.5rem;
+			font-weight: 500;
+			color: var(--white);
+			margin-bottom: 2rem;
+		}
+		.input-box {
+			position: relative;
+
+			&-input,
+			&-search {
+				border: none;
+			}
+			&-input {
+				padding: 18px 25px;
+				width: 100%;
+				border: none;
+				border-radius: 12px;
+				color: var(--gray-1);
+				font-size: 1.15rem;
+				font-weight: 400;
+			}
+			&-input:focus {
+				outline: none;
+			}
+			&-search {
+				position: absolute;
+				top: 0;
+				right: 0;
+				width: 65px;
+				height: 100%;
+				background-color: var(--black);
+				border-top-right-radius: 12px;
+				border-bottom-right-radius: 12px;
+				cursor: pointer;
+				transition: all 0.3s;
+			}
+			&-search:hover {
+				background-color: var(--gray-1);
+			}
+		}
+		.info-table {
+			margin-top: 1.5rem;
+			padding: 1.5rem;
+			background-color: var(--white);
+			border-radius: 12px;
+
+			&-info-box {
+				display: flex;
+				flex-direction: column;
+				gap: 0.5rem;
+
+				h2 {
+					font-size: 0.6rem;
+					color: var(--gray-2);
+					text-transform: uppercase;
+					letter-spacing: 1px;
+				}
+				p {
+					font-size: 1.15rem;
+					font-weight: 500;
+				}
+			}
+			&-info-box:not(:last-child) {
+				margin-bottom: 1.5rem;
+			}
+		}
+	}
+	.map {
+		background-color: #888;
+		min-height: 60vh;
+	}
+}
