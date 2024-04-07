@@ -1,0 +1,187 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: var(--ff-primary);
+}
+
+body {
+  overflow: hidden;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  max-width: 991px;
+  text-align: center;
+  margin: 0 auto;
+}
+.app-main {
+  background-image: url("../images/pattern-bg-mobile.png");
+  background-size: cover;
+  height: 300px;
+  padding: 1.5rem;
+  z-index: 5;
+}
+.app-main h1 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--white);
+  margin-bottom: 2rem;
+}
+.app-main .input-box {
+  position: relative;
+}
+.app-main .input-box-input, .app-main .input-box-search {
+  border: none;
+}
+.app-main .input-box-input {
+  padding: 18px 25px;
+  width: 100%;
+  border: none;
+  border-radius: 12px;
+  color: var(--gray-1);
+  font-size: 1.15rem;
+  font-weight: 400;
+}
+.app-main .input-box-input:focus {
+  outline: none;
+}
+.app-main .input-box-search {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 65px;
+  height: 100%;
+  background-color: var(--black);
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.app-main .input-box-search:hover {
+  background-color: var(--gray-1);
+}
+.app-main .info-table {
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  background-color: var(--white);
+  border-radius: 12px;
+}
+.app-main .info-table-info-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.app-main .info-table-info-box h2 {
+  font-size: 0.6rem;
+  color: var(--gray-2);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.app-main .info-table-info-box p {
+  font-size: 1.15rem;
+  font-weight: 500;
+}
+.app-main .info-table-info-box:not(:last-child) {
+  margin-bottom: 1.5rem;
+}
+.app .map {
+  min-height: 750px;
+  z-index: 0;
+}
+
+:root {
+  --black: #000;
+  --white: hsl(0, 0%, 100%);
+  --gray-1: hsl(0, 0%, 17%);
+  --gray-2: hsl(0, 0%, 59%);
+  --gray-3: hsl(0, 0%, 78%);
+  --ff-primary: "Rubik", sans-serif;
+}
+
+@media (min-width: 576px) and (max-width: 991px) {
+  .app-main .info-table-info-box h2 {
+    font-size: 0.75rem;
+    color: var(--gray-2);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .app-main .info-table-info-box p {
+    font-size: 1.25rem;
+    font-weight: 500;
+  }
+}
+@media (min-width: 992px) {
+  .app {
+    max-width: none;
+  }
+  .app-main {
+    background-image: url("../images/pattern-bg-desktop.png");
+  }
+  .app-main h1 {
+    font-size: 2rem;
+  }
+  .app-main .input-box {
+    max-width: 45%;
+    margin: 0 auto;
+  }
+  .app-main .input-box-input {
+    font-size: 1.15rem;
+    font-weight: 400;
+  }
+  .app-main .info-table {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 1rem 3rem;
+    margin-top: 3rem;
+    max-width: 90%;
+    margin-inline: auto;
+    text-align: left;
+  }
+  .app-main .info-table-info-box {
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+    margin-top: 1rem;
+    margin-right: 1.5rem;
+    min-height: 100px;
+    border-right: 1px solid var(--gray-3);
+    padding-right: 4rem;
+  }
+  .app-main .info-table-info-box h2 {
+    margin-bottom: 0.5rem;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+  }
+  .app-main .info-table-info-box p {
+    font-size: 1.65rem;
+    font-weight: 500;
+  }
+  .app-main .info-table-info-box:nth-child(4) {
+    border-right: none;
+    padding-right: 0;
+  }
+}
+@media (min-width: 1440px) {
+  .app-main {
+    background-image: url("../images/pattern-bg-desktop.png");
+  }
+  .app-main .input-box {
+    max-width: 30%;
+  }
+  .app-main .info-table {
+    max-width: 65%;
+  }
+  .app-main .info-table-info-box {
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+    margin-top: 1rem;
+    margin-right: 1.5rem;
+    min-height: 100px;
+    border-right: 1px solid var(--gray-3);
+    padding-right: 4rem;
+  }
+}/*# sourceMappingURL=main.css.map */
