@@ -7,17 +7,32 @@ const postalCode = document.querySelector('.postalcode');
 const timezone = document.querySelector('.timezone');
 const isp = document.querySelector('.isp');
 let URL;
-let Address;
+let address;
 let domain;
 let map;
 
 // ip koszalina 83.145.129.234
-
-// "http://www.magenta.at"
+// http://www.orange.pl
+// http://www.magenta.at
 
 const fetchAPI = () => {
-	Address = input.value
-	URL = `https://geo.ipify.org/api/v2/country,city?apiKey=at_b6OCHlZ5ajZ8LRQ3B3ppQudlwa6An&ipAddress=${Address}`;
+	let URL;
+	URL = `https://geo.ipify.org/api/v2/country,city?apiKey=at_b6OCHlZ5ajZ8LRQ3B3ppQudlwa6An&ipAddress=`;
+	address = input.value;
+	const isIPAddress = /^(\d{1,3}\.){3}\d{1,3}$/.test(address);
+	const isDomain =
+		/^[a-zA-Z0-9][a-zA-Z0-9-]{1,61}[a-zA-Z0-9](?:\.[a-zA-Z]{2,})+$/.test(
+			address
+		);
+	if (isIPAddress) {
+		URL = `https://geo.ipify.org/api/v2/country,city?apiKey=at_b6OCHlZ5ajZ8LRQ3B3ppQudlwa6An&ipAddress=${address}`;
+	} else if (isDomain) {
+		URL = `https://geo.ipify.org/api/v2/country,city?apiKey=at_b6OCHlZ5ajZ8LRQ3B3ppQudlwa6An&domain=${address}`;
+		// } else {
+		// 	alert('Podaj poprawny adres IP lub domenę');
+		// 	return;
+	}
+
 	let coordsX;
 	let coordsY;
 
@@ -53,7 +68,7 @@ const fetchAPI = () => {
 		.catch((err) => console.error(err));
 	input.value = '';
 };
-// fetchAPI();
+fetchAPI();
 
 const checkLocation = () => {
 	fetchAPI();
